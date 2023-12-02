@@ -43,7 +43,7 @@ def df_violin_plots(df: pl.DataFrame | pl.LazyFrame, y: str, z: list):
 
     fig = go.Figure()
 
-    for name in names:
+    for name in sorted(names):
         x_plot = df_to_list(df.filter(pl.col(z) == name).select(z))
         y_plot = df_to_list(df.filter(pl.col(z) == name).select(y))
         fig.add_trace(
