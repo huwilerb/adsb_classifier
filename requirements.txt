@@ -5,3 +5,6 @@ scikit-learn
 plotly
 nbformat
 kaleido
+pyarrow
+seaborn 
+matplotlib
