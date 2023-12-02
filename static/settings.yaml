@@ -1,5 +1,11 @@
 datasets:
   base_path: ../data/raw
   base_name: Sample_
-  size: 2000
+  size: 2_000
   suffix: .parquet
+adsb_threshold:
+  gs:
+    A1: 750
+    A2: 750 
+    A3: 750
+    A5: 750
