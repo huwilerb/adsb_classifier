@@ -23,3 +23,25 @@ class MinMaxNormalize:
             raise NotImplementedError
         else:
             raise NotImplementedError 
+        
+def min_max_normalize(df: pl.DataFrame | pl.LazyFrame, col: str ):
+    return (
+        df 
+        .with_columns(
+            ((pl.col(col) - pl.col(col).min()) /(pl.col(col).max() - pl.col(col).min())).alias(f"n_{col}")
+        )        
+        
+    )
+
+
+def main():
+    data = {'col1': [1, 4, 7, 2, 5, 8, 3, 6, 9, 10]}
+    df = pl.DataFrame(data)
+    column = 'col1'
+    df = (
+        df.pipe(min_max_normalize, "col1")
+    )
+    print(df.head(10))
+    
+if __name__ == "__main__":
+    main()
