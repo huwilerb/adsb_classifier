@@ -3,3 +3,4 @@ pandas
 PyYAML
 scikit-learn
 plotly
+nbformat
