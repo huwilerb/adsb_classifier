@@ -1,0 +1,5 @@
+datasets:
+  base_path: ../data/raw
+  base_name: Sample_
+  size: 2000
+  suffix: .parquet
