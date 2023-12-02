@@ -8,6 +8,7 @@ from itertools import chain
 x_dtypes = list | pl.DataFrame | pl.LazyFrame
 
 def barplots_continuous(x: x_dtypes,
+                        y: str,
                         names: list,
                         legend_title: str = "Column names",
                         norm: Optional[Callable] = None,
@@ -59,7 +60,7 @@ def df_violin_plots(df: pl.DataFrame | pl.LazyFrame, y: str, z: list):
     fig.update_layout(title=title)
     return fig
 
-def parse_x_input(x: list | pl.DataFrame | pl.LazyFrame,
+def parse_xy_input(x: list | pl.DataFrame | pl.LazyFrame,
                   names: list
                   ) -> list:
 
